@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>About Us</title>
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Food Photo/Delibg.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                font-family: Arial, sans-serif;
+                padding-bottom: 90px;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.1);
+                height: 70px;
+                background-color: bisque;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: 'Courier New', Courier, monospace;
+                color: #333;
+            }
+
+            .logo-link {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                background-color: #ff7043;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                box-shadow: 0px 3px 6px rgba(255, 112, 67, 0.4);
+            }
+
+            .nav ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+            }
+
+            .nav ul li {
+                padding: 0 12px;
+            }
+
+            .nav ul li a {
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .nav ul li a:hover {
+                text-decoration: underline;
+                color: #ff7043;
+            }
+
+            .login-btn {
+                background-color: #ff7043;
+                color: white !important;
+                padding: 6px 15px;
+                border-radius: 20px;
+                font-size: 18px !important;
+            }
+
+            .page-title {
+                text-align: center;
+                margin-top: 110px;
+                font-size: 42px;
+                font-weight: bold;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            }
+
+            .page-subtitle {
+                text-align: center;
+                margin-top: 10px;
+                font-size: 20px;
+                color: #fdf5e6;
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            }
+
+            .about-box {
+                width: 900px;
+                max-width: 90%;
+                margin: 35px auto 0 auto;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 40px;
+                border-radius: 25px;
+                box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+            }
+
+            .about-box h3 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 12px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            .about-box p {
+                font-size: 17px;
+                color: #555;
+                line-height: 1.7;
+                margin-bottom: 25px;
+            }
+
+            .stats {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+                margin-top: 30px;
+                padding: 0 20px;
+            }
+
+            .stat-box {
+                background-color: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                padding: 25px 20px;
+                width: 200px;
+                text-align: center;
+                box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .stat-box .num {
+                font-size: 34px;
+                font-weight: bold;
+                color: #ff7043;
+            }
+
+            .stat-box .label {
+                font-size: 15px;
+                color: #555;
+                margin-top: 5px;
+            }
+
+            .values {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+                margin: 30px auto 0 auto;
+                padding: 0 20px;
+            }
+
+            .value-box {
+                background-color: rgba(255, 255, 255, 0.95);
+                border-radius: 20px;
+                padding: 30px 25px;
+                width: 280px;
+                text-align: center;
+                box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .value-box:hover {
+                box-shadow: 0px 12px 30px rgba(255, 112, 67, 0.5);
+            }
+
+            .value-icon {
+                font-size: 42px;
+                margin-bottom: 10px;
+            }
+
+            .value-box h4 {
+                font-size: 22px;
+                color: #333;
+                margin-bottom: 8px;
+            }
+
+            .value-box p {
+                font-size: 15px;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            .order-link {
+                display: block;
+                width: 260px;
+                margin: 35px auto 0 auto;
+                text-align: center;
+                text-decoration: none;
+                background-color: #ff7043;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 14px 0;
+                border-radius: 30px;
+                box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+            }
+
+            .order-link:hover {
+                background-color: #e64a19;
+            }
+
+            .alt {
+                color: black;
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+                font-size: 26px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background-color: #fffaf0;
+            }
+
+             .socialIcons   {
+
+                padding-top:10px ;
+            }
+
+            .socialIcons a{
+                background-color: white;
+                font-size: 30px;
+                border: 1px solid black;
+                border-radius: 20px;
+                color: black;
+            }
+
+            .socialIcons a:hover{
+                background: black;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="nav">
+            <div class="logo">
+                <a href="#" class="logo-link"><div class="logo-icon">🍔</div>
+                    <span>Tasty Vibes</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="About_us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Rating.html">Reviews</a></li>
+                <li><a href="index.html" class="login-btn">Log Out</a></li>
+            </ul>
+        </div>
+
+        <h1 class="page-title">About Us</h1>
+        <p class="page-subtitle">The story behind every delicious delivery.</p>
+
+        <div class="about-box">
+            <h3>Who We Are</h3>
+            <p>
+                Tasty Vibes is a food delivery service based in Yangon, Myanmar. We bring together
+                great local and international dishes, from juicy burgers and cheese pizza to Wagyu
+                steak, sushi, Kyay-Oh and refreshing drinks, and deliver them hot and fresh to your door.
+            </p>
+
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is simple: make ordering good food easy, fast and enjoyable. We work with
+                talented chefs and use quality ingredients so that every order tastes the way it should.
+            </p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="num">15+</div>
+                <div class="label">Menu Items</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">30 min</div>
+                <div class="label">Average Delivery</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">24/7</div>
+                <div class="label">Customer Support</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">4.5 ⭐</div>
+                <div class="label">Customer Rating</div>
+            </div>
+        </div>
+
+        <div class="values">
+            <div class="value-box">
+                <div class="value-icon">🌿</div>
+                <h4>Fresh Ingredients</h4>
+                <p>We choose fresh, high-quality ingredients for every dish we prepare.</p>
+            </div>
+            <div class="value-box">
+                <div class="value-icon">🚀</div>
+                <h4>Fast Delivery</h4>
+                <p>Your food arrives hot and on time, right at your doorstep.</p>
+            </div>
+            <div class="value-box">
+                <div class="value-icon">❤️</div>
+                <h4>Made With Care</h4>
+                <p>Every order is prepared and packed with care by our team.</p>
+            </div>
+        </div>
+
+
+        <div class="alt">
+            &copy; Developed By Htet Hlaing Win (Batch6-26).All right reserved.
+            <center>
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        </center>
+        </div>
+
+    </body>
+</html>
